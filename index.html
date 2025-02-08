@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guida Completa a JavaScript</title>
+  <style>
+    /* Reset di base e impostazioni generali */
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+/* Stile base per i bottoni */
+button {
+  background: linear-gradient(135deg, #4CAF50, #2E7D32);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  text-align: center;
+}
+
+/* Effetto Hover */
+button:hover {
+  background: linear-gradient(135deg, #66BB6A, #388E3C);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Effetto Click */
+button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Variante con bordo */
+button.outline {
+  background: transparent;
+  color: #4CAF50;
+  border: 2px solid #4CAF50;
+}
+
+button.outline:hover {
+  background: #4CAF50;
+  color: white;
+}
+
+
+body {
+font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+background-color: #f9f9f9;
+color: #333;
+line-height: 1.6;
+}
+
+/* Header fisso in alto */
+header {
+background-color: #222;
+color: #fff;
+padding: 20px;
+text-align: center;
+position: sticky;
+top: 0;
+z-index: 1000;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Contenitore centrale per il contenuto */
+.container {
+max-width: 900px;
+margin: 20px auto;
+padding: 0 20px;
+}
+
+/* Stile per le sezioni della guida */
+section {
+background-color: #fff;
+margin: 20px 0;
+padding: 20px;
+border-left: 5px solid #222;
+box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+border-radius: 4px;
+}
+
+/* Stile per titoli e sottotitoli */
+h1 {
+font-size: 2.5em;
+margin-bottom: 10px;
+}
+
+h2 {
+font-size: 2em;
+margin-top: 20px;
+padding-bottom: 5px;
+border-bottom: 2px solid #ddd;
+margin-bottom: 15px;
+}
+
+/* Stile per paragrafi e testo */
+p {
+font-size: 1.1em;
+margin-bottom: 15px;
+text-align: justify;
+}
+
+/* Stile per il testo sottolineato (<u>) */
+u {
+font-weight: bold;
+text-decoration: underline;
+}
+
+/* Stile per blocchi di codice e preformattati */
+code {
+font-family: 'Courier New', monospace;
+background-color: #272822;
+color: #f8f8f2;
+padding: 3px 5px;
+border-radius: 3px;
+}
+
+pre {
+font-family: 'Courier New', monospace;
+background-color: #272822;
+color: #f8f8f2;
+padding: 15px;
+border-radius: 4px;
+overflow-x: auto;
+margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+background-color: #222;
+color: #fff;
+text-align: center;
+padding: 15px 0;
+margin-top: 40px;
+}
+
+   </style>
+
+</head>
+<header> <h1>JavaScript</h1></header>
+<div class="container">
+<body>
+  <h1>benvenuto nella guida completa per JavaScript scritta da angelo del piano,iniziamo subito</h1>
+  <div class="intro">
+    <h2> introduzione:</h2>
+        <p>
+        JavaScript è uno dei pilastri portanti di html,css,js ed è la parte dinamica del tutto<br>
+        poichè consente di gestire eventi e di manipolare la struttura del dom(document object model),ovvere ciò che esiste in html.<br>
+        js è molto usato nella programmazione di siti web e giochi per la sua versatilità ma passiamo alla parte pratica.
+        </p>
+        
+  </div>
+  <div class="step1">
+    <h2>
+        le variabili:
+    </h2>
+    <p>
+        la prima cosa che c'è da imparare di js sono le variabili.<br>
+        quasi in ogni linguaggio di programmazione esistono le variabili,scatole di dati che servono al programma ad avere delle informazioni,<br>
+        in js esistono 3 tipi di variabili:<br>
+        1.let:la variabile più usata poichè è molto dinamica.<br>
+        2.var:vecchia variabile,attualmente non si usa quasi più grazie a let<br>
+        3.const:variabile constante che non cambia dopo la prima assegnazione.
+    </p>
+    <button onclick="leggiDiPiù1()">leggi di più</button>
+  </div>
+  <div class="step2">
+    <h2>
+        le funzioni:
+    </h2>
+    <p>
+        js dà la possibilità di raggruppare più istruzioni di codice in una sola,attraverso le funzioni.<br>
+        sostanzialmente le funzioni sono pacchetti di codice personalizzabili in maniera semplice.<br>
+        sono una delle cose più utili di js e rendono più facile la scrittura del programma.<br>
+        es. function saluta(){console.log("ciao");};<br>
+        saluta()// output:ciao 
+
+    </p>
+    <button onclick="leggiDiPiù2()">leggi di più</button>
+  </div>
+  <div class="step3">
+    <h2>
+        la manipolazione del DOM:
+    </h2>
+    <p>
+        come abbiamo detto prima JavaScript consente di manipolare il contenuto di html cioè il DOM,<br>
+        permettendo un'ampia dinamica del programma.
+        quest'argomente è abbastanza complicato se non si conosce html<br>
+        per tanto è consigliato approfondire prima html.<br>
+        JavaScript permette di creare elementi nel html e di modificarli a poprio piacimento.
+    </p>
+    <button onclick="leggiDiPiù3()">leggi di più</button>
+  </div>
+  <div class="step4">
+    <h2>
+        gli eventi:
+    </h2>
+    <p>
+        JavaScript consente di fare controlli in base all'evento desiderato,per esempio<br>
+        se l'utente clicca il tastro sinistro del mouse su un oggetto del html JavaScript ascolta quell'evento.<br>
+        es.addeventlistener("click",()={<br>
+            console.log("hai cliccato");<br>
+        }); // quando l'utente clicca il tasto sinistro del mouse, output:hai cliccato
+    </p>
+    
+    <button onclick="leggiDiPiù4()">leggi di più</button>
+  </div>
+  <div class="altro">
+    <h2>
+        questi sono i 4 step fondamentali di JavaScript ma ci sono molti altri punti che andremo ad approfondire,
+        per eventuali dubbi ecco un link utile
+    </h2>
+    <button onclick="leggiDiPiù5()">JavaScript guide</button>
+    
+  </div>
+</div>
+  <script>
+    function leggiDiPiù1(){
+       window.location.href = "https://bhaki17.github.io/var/";
+        
+    }
+    function leggiDiPiù2(){
+       window.location.href = "https://bhaki17.github.io/functionjs/";
+        
+    }
+    function leggiDiPiù3(){
+       window.location.href = "https://bhaki17.github.io/DOM/";
+        
+    }
+    function leggiDiPiù4(){
+       window.location.href = "https://bhaki17.github.io/event/";
+        
+    }
+    function leggiDiPiù5(){
+      window.location.href = "https://www.html.it/guide/guida-javascript-di-base/";
+    }
+  </script>
+<footer>
+  <p>&copy; 2025 Guida JavaScript. scritta da angelo del piano</p>
+</footer>
+</body>
+</html>
