@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>le variabili in JavaScript</title>
+    </head>
+    <body>
+       <style>
+        /* Reset di base e impostazioni generali */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header fisso in alto */
+header {
+  background-color: #222;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Contenitore centrale per il contenuto */
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+/* Stile per le sezioni della guida */
+section {
+  background-color: #fff;
+  margin: 20px 0;
+  padding: 20px;
+  border-left: 5px solid #222;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 4px;
+}
+
+/* Stile per titoli e sottotitoli */
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 2em;
+  margin-top: 20px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #ddd;
+  margin-bottom: 15px;
+}
+
+/* Stile per paragrafi e testo */
+p {
+  font-size: 1.1em;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+/* Stile per il testo sottolineato (<u>) */
+u {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Stile per blocchi di codice e preformattati */
+code {
+  font-family: 'Courier New', monospace;
+  background-color: #272822;
+  color: #f8f8f2;
+  padding: 3px 5px;
+  border-radius: 3px;
+}
+
+pre {
+  font-family: 'Courier New', monospace;
+  background-color: #272822;
+  color: #f8f8f2;
+  padding: 15px;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 40px;
+}
+
+       </style>
+       <header>
+        <h1>
+            le variabili in JavaScript:
+        </h1>
+        </header>
+        <div class="container">
+        <h2>
+            var
+        </h2>
+        <p>
+            la variabile var è stata la variabile principale di js fino a prima dell'aggiunta di let e const(2015),<br>
+            questa può essere:<br>
+            <u>una stringa:</u> es.<code> x = "marco";<br>
+            console.log(x);// output:marco</code><br>
+            <u>un numero:</u> es.<code>var x = 10;<br>
+            var y = 2 * x;<br>
+            console.log(y);//output 20</code><br>
+            <u>un array:</u> cos'è un array?<br>
+            un array è un insieme di stringhe,numeri o oggetti in una sola variabile,<br>
+            es. <code>var x =[1,2,3,4,5,6,7,"marco","giuseppe","antonio"];<br>
+            console.log(x);//output 1,2,3,4,5,6,7,marco,giuseppe,antonio</code><br>
+            <u>un oggetto:</u> cos'è un oggetto?<br>
+            un oggetto in js è un insieme di dati chiamati property ovvero propietà le quali sono personalizzabili<br>
+            es.<code>var x ={<br>
+                nome:"marco",<br>
+                cognome:"rossi",<br>
+                anni:18<br>
+            };<br>
+            console.log(x);//output nome:marco,cognome:rossi,anni:18</code>
+        </p>
+        <h2>
+            let
+        </h2>
+        <p>
+            let è attualmente la variabile più usata in js ed è praticamente la versione migliore di var.<br>
+            let se viene dichiarata due volte da errore a differenza di var(altro motivo per cui non si usa più).<br>
+            anche questa variabile può essere una stringa,un numero,un array o un oggetto come var.
+        </p>
+        <h2>
+            const
+        </h2>
+        <p>
+            const a differenza di var e let è una constante cioè una volta assegnatogli un valore questo non cambia,<br>
+            anche questa come var e let può essere una stringa,un numero,un array o un oggetto.
+        </p>
+        <h2>
+            come distringuere le variabili
+        </h2>
+        <p>
+            per capire di che tipo è una variabile ci sono delle semplici differenze:<br>
+            stringhe:le stringhe sono dichiarate con "" o '' o ``<br>
+            numeri: i numeri non hanno nulla oltre loro stessi per esempio <code>var x = 1;</code><br>
+            array:gli array sono introdotti da delle parentesi quadre e ogni stringa viene divisa da una virgola tipo<code> let array =[a,b,c]</code><br>
+            oggetti:gli oggetti sono introdotti da delle parentesi graffe e ogni propietà è divisa da una virgola e scritta tipo <code>property:any,</code><br>
+            dove property rappresenta il nome della propietà, i due punti l'inizio della propietà e la virgola la divide dalla prossima.
+        </p>
+    </div>
+        <footer>
+            <p>&copy; 2025 Guida JavaScript. scritta da angelo del piano</p>
+        </footer>
+       
+    </body>
+</html>

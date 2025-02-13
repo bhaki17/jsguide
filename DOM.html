@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            la manipolazione del DOM
+        </title>
+        <style>
+            /* Reset di base e impostazioni generali */
+        * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        }
+        
+        body {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+        line-height: 1.6;
+        }
+        
+        /* Header fisso in alto */
+        header {
+        background-color: #222;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Contenitore centrale per il contenuto */
+        .container {
+        max-width: 900px;
+        margin: 20px auto;
+        padding: 0 20px;
+        }
+        
+        /* Stile per le sezioni della guida */
+        section {
+        background-color: #fff;
+        margin: 20px 0;
+        padding: 20px;
+        border-left: 5px solid #222;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        border-radius: 4px;
+        }
+        
+        /* Stile per titoli e sottotitoli */
+        h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        }
+        
+        h2 {
+        font-size: 2em;
+        margin-top: 20px;
+        padding-bottom: 5px;
+        border-bottom: 2px solid #ddd;
+        margin-bottom: 15px;
+        }
+        
+        /* Stile per paragrafi e testo */
+        p {
+        font-size: 1.1em;
+        margin-bottom: 15px;
+        text-align: justify;
+        }
+        
+        /* Stile per il testo sottolineato (<u>) */
+        u {
+        font-weight: bold;
+        text-decoration: underline;
+        }
+        
+        /* Stile per blocchi di codice e preformattati */
+        code {
+        font-family: 'Courier New', monospace;
+        background-color: #272822;
+        color: #f8f8f2;
+        padding: 3px 5px;
+        border-radius: 3px;
+        }
+        
+        pre {
+        font-family: 'Courier New', monospace;
+        background-color: #272822;
+        color: #f8f8f2;
+        padding: 15px;
+        border-radius: 4px;
+        overflow-x: auto;
+        margin-bottom: 15px;
+        }
+        
+        /* Footer */
+        footer {
+        background-color: #222;
+        color: #fff;
+        text-align: center;
+        padding: 15px 0;
+        margin-top: 40px;
+        }
+        
+           </style>
+    </head>
+    <body>
+        <header>
+            <h1>
+                la manipolazione del DOM in JavaScript:
+            </h1>
+        </header>
+        <div class="container">
+            <h2>
+                cos'è il DOM?
+            </h2>
+            <p>
+                il <u>DOM</u> ovvere <mark>document object model</mark> è tutto ciò che si trova in html,<br>
+                quindi sostanzialmente quello che appare visibile nello schermo dato che html è la struttura del programma.
+            </p>
+            <h2>
+                cos'è la manipolazione del DOM?
+            </h2>
+            <p>
+                JavaScript consente di gestire,creare,eliminare e modificare tutti gli oggetti di html per esempio di modificare le coordinate<br>
+                di un elemento <code>div</code> attraverso il CSS(la parte grafica del codice).<br>
+                    es.<code>//html<br>
+                        div id="p1" style="width: 40px;height: 40px;background-color: black;position: absolute;left: 0px;top: 0px;"/div<br>
+                        //script<br>
+                            const p1 = document.getElementById("p1");<br>
+                            let x = 0;<br>
+                            let y = 0;<br>
+                            function move(){
+                                p1.style.top= y + 2 +"px";<br>
+                                p1.style.left= x + 2 +"px";<br>
+                            }<br>
+                            addEventListener("click",()=>{<br>
+                                move();<br>
+                            });
+                    </code>
+            </p>
+            <h2>
+                come si crea un elemento?
+            </h2>
+            <p>
+                per creare un elemento in html da javascript usiamo la formula<br>
+                <code>document.createElement()</code><br>
+                andando a inserire nelle parentesi il tipo di oggetto es.("div")
+            </p>
+            <h2>
+                come si rimuove un elemento?
+            </h2>
+            <p>
+                per rimuovere un elemento bisogna dichiararlo all'interno di una variabile e poi usare il metodo <code>.remove()</code> per rimuoverlo<br>
+                es.<code>const esempio = document.getElementById("esempio");<br>
+                    esempio.remove();
+                </code>
+
+            </p>
+            <h2>
+                come si gestisce un elemento?
+            </h2>
+            <p>
+                è possibile associare un elemento all'interno di un altro con il metodo <code>.appendchild()</code><br>
+                es.<code>document.body.appendChild(nuovoDiv);<br>
+                </code>
+                in questo esempio l'elemento <code>div</code> viene associato al <code>body</code>.<br>
+                caso opposto,è possibile rimuovere un oggetto già associato a un'altro attraverso <code>.removechild()</code><br>
+                es.<code>let contenitore = document.getElementById("contenitore");
+                    let elementoDaRimuovere = document.getElementById("figlio");
+                    contenitore.removeChild(elementoDaRimuovere);</code>
+            </p>
+
+        </div>
+        <footer>
+            <p>&copy; 2025 Guida JavaScript. scritta da angelo del piano</p>
+          </footer>
+    </body>
+</html>

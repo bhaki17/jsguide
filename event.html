@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>gli eventi</title>
+        <style>
+            /* Reset di base e impostazioni generali */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    /* Stile base per i bottoni */
+button {
+  background: linear-gradient(135deg, #4CAF50, #2E7D32);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  text-align: center;
+}
+
+/* Effetto Hover */
+button:hover {
+  background: linear-gradient(135deg, #66BB6A, #388E3C);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Effetto Click */
+button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Variante con bordo */
+button.outline {
+  background: transparent;
+  color: #4CAF50;
+  border: 2px solid #4CAF50;
+}
+
+button.outline:hover {
+  background: #4CAF50;
+  color: white;
+}
+
+    
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    /* Header fisso in alto */
+    header {
+      background-color: #222;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Contenitore centrale per il contenuto */
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+    
+    /* Stile per le sezioni della guida */
+    section {
+      background-color: #fff;
+      margin: 20px 0;
+      padding: 20px;
+      border-left: 5px solid #222;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      border-radius: 4px;
+    }
+    
+    /* Stile per titoli e sottotitoli */
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    
+    h2 {
+      font-size: 2em;
+      margin-top: 20px;
+      padding-bottom: 5px;
+      border-bottom: 2px solid #ddd;
+      margin-bottom: 15px;
+    }
+    
+    /* Stile per paragrafi e testo */
+    p {
+      font-size: 1.1em;
+      margin-bottom: 15px;
+      text-align: justify;
+    }
+    
+    /* Stile per il testo sottolineato (<u>) */
+    u {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+    
+    /* Stile per blocchi di codice e preformattati */
+    code {
+      font-family: 'Courier New', monospace;
+      background-color: #272822;
+      color: #f8f8f2;
+      padding: 3px 5px;
+      border-radius: 3px;
+    }
+    
+    pre {
+      font-family: 'Courier New', monospace;
+      background-color: #272822;
+      color: #f8f8f2;
+      padding: 15px;
+      border-radius: 4px;
+      overflow-x: auto;
+      margin-bottom: 15px;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: #222;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+    
+           </style>
+    </head>
+    <body>
+        <header>
+            <h1>
+                gli eventi in JavaScript:
+            </h1>
+        </header>
+        <div class="container">
+            <h2>
+                cosa sono gli eventi?
+            </h2>
+            <p>
+                <u>gli eventi</u> sono dei controlli che fa il programma sulle azioni dell'utente.<br>
+                esistono diversi tipi di eventi,ecco alcuni esempi:<br>
+                Eventi del mouse:<code> click, dblclick, mouseover, mouseout, mousemove</code><br>
+                Eventi della tastiera:<code> keydown, keyup, keypress</code><br>
+                Eventi del form:<code> submit, change, focus, blur</code><br>
+                Eventi della finestra:<code> load, resize, scroll</code><br>
+                Eventi della touch screen:<code> touchstart, touchmove, touchend</code><br>
+                e tanti altri eventi,ecco un esempio:<br>
+                <code>//javascript<br>
+                    let x = 0;<br>
+                    function counter(){<br>
+                        x=++<br>
+                        console.log(x);<br>
+                    };<br>
+                    addEventListener("click",counter());<br>
+                    //ad ogni click la x incrementa di 1 e viene stampata nella console
+                </code>
+             </p>
+             <h2>
+                evento metodo:
+             </h2>
+             <p>
+                un evento metodo è specificato all'intero dello script con .onNomeDelEvento per esempio <code>.onclick</code><br>
+                <code>
+                    //JavaScript<br>
+                    let bottone = document.getElementById("btn");<br>
+                    bottone.onclick = function() {<br>
+                      alert("Hai cliccato il bottone!");<br>
+                    };
+                </code>
+             </p>
+             <h2>
+                evento con addEventListener:
+             </h2>
+             <p>
+                il modo più usato di controllare gli eventi è <code>addEventListener()</code> che permette di ascoltare gli eventi senza sovrascriverli<br>
+                es.<br><code>
+                    let bottone = document.getElementById("btn");<br>
+                    bottone.addEventListener("click", function() {<br>
+                      alert("Hai cliccato!");<br>
+                    });<br>
+                    // Puoi aggiungere più eventi senza problemi<br>
+                    bottone.addEventListener("click", function() {<br>
+                      console.log("Evento registrato!");<br>
+                    });
+                </code>
+             </p>
+             <button onclick="linkeventlist()">lista degli eventi di JavaScript</button>
+
+        </div>
+        <script>
+            function linkeventlist(){
+                window.location.href = "https://www.html.it/pag/15246/gli-eventi1/";
+            }
+        </script>
+        <footer>
+            <p>&copy; 2025 Guida JavaScript. scritta da angelo del piano</p>
+          </footer>
+        
+    </body>
+</html>

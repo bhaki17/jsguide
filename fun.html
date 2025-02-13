@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>le funzioni</title>
+        <style>
+            /* Reset di base e impostazioni generali */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    /* Header fisso in alto */
+    header {
+      background-color: #222;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Contenitore centrale per il contenuto */
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+    
+    /* Stile per le sezioni della guida */
+    section {
+      background-color: #fff;
+      margin: 20px 0;
+      padding: 20px;
+      border-left: 5px solid #222;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      border-radius: 4px;
+    }
+    
+    /* Stile per titoli e sottotitoli */
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    
+    h2 {
+      font-size: 2em;
+      margin-top: 20px;
+      padding-bottom: 5px;
+      border-bottom: 2px solid #ddd;
+      margin-bottom: 15px;
+    }
+    
+    /* Stile per paragrafi e testo */
+    p {
+      font-size: 1.1em;
+      margin-bottom: 15px;
+      text-align: justify;
+    }
+    
+    /* Stile per il testo sottolineato (<u>) */
+    u {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+    
+    /* Stile per blocchi di codice e preformattati */
+    code {
+      font-family: 'Courier New', monospace;
+      background-color: #272822;
+      color: #f8f8f2;
+      padding: 3px 5px;
+      border-radius: 3px;
+    }
+    
+    pre {
+      font-family: 'Courier New', monospace;
+      background-color: #272822;
+      color: #f8f8f2;
+      padding: 15px;
+      border-radius: 4px;
+      overflow-x: auto;
+      margin-bottom: 15px;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: #222;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+    
+           </style>
+    </head>
+    <body>
+
+        <header>
+        <h1>
+            le funzioni in JavaScript:
+        </h1>
+    </header>
+        <div class="container">
+        <p>
+            in javascript le funzioni sono dei blocchi di codice che semplificano la scrittura del programma
+        </p>
+        <h2>
+            in javascript esistono 8 tipi di funzioni e sono:
+        </h2>
+        <h2>
+            funzioni dichiarate:
+        </h2>
+        <p>
+            <u>le funzioni dichiarate</u> sono definite con la keyword <code>function</code> e possono essere usate<br>
+            prima della loro dichiarazione grazie all'hoisting.<br>
+            <code>function somma(a, b) {<br>
+                return a + b;<br>
+            }<br>
+              console.log(somma(2, 3)); // Output: 5
+              </code>
+        </p>
+        <h2>
+            le funzioni espresse:
+        </h2>
+        <p>
+            <u>le funzioni espresse</u> sono assegnate a una variabile e non subiscono l'hoisting.<br>
+            <code>const moltiplica = function(a, b) {<br>
+                return a * b;<br>
+              };<br>
+              console.log(moltiplica(4, 5)); // Output: 20
+              </code>
+        </p>
+        <h2>
+            le arrow function:
+        </h2>
+        <p>
+            <u>le arrow function</u>(o funzioni freccia) sono una variabile più compatta delle funzioni e<br>
+            sono ottime per scrivere funzioni anonime(cioè senza nome) brevi.<br>
+            <code>const sottrai = (a, b) => a - b;<br>
+                console.log(sottrai(10, 3)); // Output: 7<br>
+                </code>
+                se c'è un solo parametro si possono omettere le parentesi
+                <code>const doppio = x => x * 2;<br>
+                    console.log(doppio(4)); // Output: 8
+                    </code>
+        </p>
+        <h2>
+            le funzioni IIFE:
+        </h2>
+        <p>
+            <u>le funzioni IIFE(Immediately Invoked Function Expression)</u> sono delle funzioni che si auto eseguono non appena vengono definite<br>
+            <code>(function() {<br>
+                console.log("Eseguito subito!");<br>
+              })(); <br>
+              // Output: "Eseguito subito!"
+              </code>
+        </p>
+        <h2>
+            le funzioni costruttore:
+        </h2>
+        <p>
+        <u>le funzioni costruttore</u> sono funzioni che permettono di creare funzioni dinamicamente e sono introdotte da <code>new function</code><br>
+        <code>const sommaDinamica = new Function("a", "b", "return a + b");<br>
+            console.log(sommaDinamica(2, 3)); // Output: 5<br>
+            </code>
+        </p>
+        <h2>
+            le funzioni ricorsive:
+        </h2>
+        <p>
+            <u>le funzioni ricorsive</u> sono funzioni che si chiamano da sole, usate per problemi come il fattoriale.es.<br>
+            <code>function fattoriale(n) {<br>
+                return n === 0 ? 1 : n * fattoriale(n - 1);<br>
+              }<br>
+              console.log(fattoriale(5)); // Output: 120
+              </code>
+        </p>
+        <h2>
+            le funzioni di callback:
+        </h2>
+        <p>
+            <u>le funzioni di callback</u> sono funzioni passate come argomento ad altre funzioni.<br>
+            es.<code>function saluta(nome, callback) {<br>
+                console.log("Ciao " + nome);<br>
+                callback();<br>
+              }<br>
+              function mostraMessaggio() {<br>
+                console.log("Benvenuto!");<br>
+              }<br>
+              saluta("Marco", mostraMessaggio);<br>
+              // Output: <br>
+              // Ciao Marco<br>
+              // Benvenuto!
+              </code>
+        </p>
+        <h2>
+            le funzioni Asincrone:
+        </h2>
+        <p>
+            <u>le funzioni Asincrone</u> sono usate per operazioni asincrone come chiamate API.<br>
+            es.<code>async function fetchData() {<br>
+                let response = await fetch("https://jsonplaceholder.typicode.com/todos/1");<br>
+                let data = await response.json();<br>
+                console.log(data);<br>
+              }<br>
+              fetchData();
+              </code>
+        </p>
+    </div>
+        </body>
+</html>
